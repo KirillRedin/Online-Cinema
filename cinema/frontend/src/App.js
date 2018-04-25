@@ -8,11 +8,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Красава, Работает!!</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <div style={{
+              position: 'fixed',
+              right: '10px',
+              bottom: '10px',
+              fontSize: '20px'
+          }}>Kirill - pizduc</div>
       </div>
     );
   }
