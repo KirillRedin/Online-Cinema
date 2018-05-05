@@ -1,11 +1,12 @@
 # Online-Cinema
 
+if first time: pip install -r requirements.txt
+
 ## Steps to install:
-1. . ./env/bin/activate
-2. cd cinema
-3. python manage.py migrate
-4. python manage.py runserver
+1. cd cinema
+2. python manage.py migrate
+3. python manage.py runserver
 ### In the separate terminal:
-5. Go to frontend folder
-6. npm i
-7. npm run start
+4. Go to frontend folder
+5. npm i
+6. npm run start
