@@ -2,6 +2,15 @@ from django.db import models
 
 # Create your models here.
 
+class Admin(models.Model):
+    name = models.CharField(max_length=45)
+    password = models.CharField(max_length=45, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'admin'
+
+
 class CategoryPrice(models.Model):
     seat_category = models.ForeignKey('SeatCategory', models.DO_NOTHING, primary_key=True)
     session = models.ForeignKey('Session', models.DO_NOTHING)
@@ -16,8 +25,8 @@ class CategoryPrice(models.Model):
 class Film(models.Model):
     name = models.CharField(max_length=45)
     description = models.TextField(blank=True, null=True)
-    language = models.ForeignKey('Language', models.DO_NOTHING)
-    subtitle = models.ForeignKey('Language', models.DO_NOTHING, blank=True, null=True)
+    language = models.ForeignKey('Language', models.DO_NOTHING, related_name='language')
+    subtitle = models.ForeignKey('Language', models.DO_NOTHING, related_name='subtitle', blank=True, null=True)
     release_date = models.DateField()
     duration = models.TimeField(blank=True, null=True)
     trailer = models.CharField(max_length=255, blank=True, null=True)
