@@ -1,8 +1,0 @@
-.hall-seat {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: rgb(96, 123, 136);
-    cursor: pointer;
-    border-radius: 4px;
-}
