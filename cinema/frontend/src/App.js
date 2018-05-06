@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {Route, Switch, BrowserRouter} from 'react-router-dom';
 import './App.css';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import MainPage from "./pages/Main/Main";
+import Login from "./pages/Login/Login";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import Hall from "./pages/Hall/Hall";
+import NotFound from "./pages/NotFound/NotFound";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Красава, Работает!!</h1>
-        </header>
-          <div style={{
-              position: 'fixed',
-              right: '10px',
-              bottom: '10px',
-              fontSize: '20px'
-          }}>Kirill - pizduc</div>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path="/" component={MainPage} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/aboutus" component={AboutUs} />
+                        <Route path="/hall" component={Hall} />
+                        <Route component={NotFound} />
+                    </Switch>
+                </BrowserRouter>
+            </MuiThemeProvider>
+        );
+    }
 }
 
 export default App;

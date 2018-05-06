@@ -1,0 +1,15 @@
+.main-page {
+    background-color: #222;
+    color: #DFF7FA;
+}
+
+.main-page__header {
+    text-align: center;
+    color: white;
+}
+
+.other-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}

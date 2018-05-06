@@ -1,0 +1,35 @@
+.movie {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.movie-poster {
+    width: 50%;
+    text-align: center;
+}
+
+.movie-poster img {
+    width: 350px;
+}
+
+.movie-info {
+    width: 50%;
+}
+
+.movie-info__actor {
+    text-decoration: underline;
+}
+
+.movie-info__name {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.movie-info > div {
+    margin-bottom: 10px;
+}
+
+.movie-info a {
+    color: white;
+}
