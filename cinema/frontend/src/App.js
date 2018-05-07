@@ -8,6 +8,7 @@ import MainPage from "./pages/Main/Main";
 import Login from "./pages/Login/Login";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Hall from "./pages/Hall/Hall";
+import Book from "./pages/Book/Book";
 import NotFound from "./pages/NotFound/NotFound";
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
                         <Route path="/login" component={Login} />
                         <Route path="/aboutus" component={AboutUs} />
                         <Route path="/hall" component={Hall} />
+                        <Route path="/book/:bookType/:placeId" component={Book} />
                         <Route component={NotFound} />
                     </Switch>
                 </BrowserRouter>
