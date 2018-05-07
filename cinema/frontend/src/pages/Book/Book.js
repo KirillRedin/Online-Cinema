@@ -4,6 +4,9 @@ import TextField from 'material-ui/TextField/TextField';
 import RaisedButton from 'material-ui/RaisedButton/RaisedButton';
 import Header from '../../components/Header/Header';
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -16,7 +19,7 @@ class Login extends Component {
     handleSubmit = () => {
         const { email, name } = this.state;
         const { bookType, placeId } = this.props.match.params;
-        axios.post('/api/book', {
+        axios.post('/api/book/', {
             email: email,
             name: name,
             statusId: +bookType,
