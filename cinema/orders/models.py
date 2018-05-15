@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Admin(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=45)
     password = models.CharField(max_length=45, blank=True, null=True)
 
@@ -23,6 +24,7 @@ class CategoryPrice(models.Model):
 
 
 class Film(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=45)
     description = models.TextField(blank=True, null=True)
     language = models.ForeignKey('Language', models.DO_NOTHING, related_name='language')
@@ -40,6 +42,7 @@ class Film(models.Model):
 
 
 class Genre(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=45)
 
     class Meta:
@@ -48,6 +51,7 @@ class Genre(models.Model):
 
 
 class Hall(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=45)
     seats_map = models.TextField(blank=True, null=True)
 
@@ -57,6 +61,7 @@ class Hall(models.Model):
 
 
 class Language(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=45)
 
     class Meta:
@@ -65,6 +70,7 @@ class Language(models.Model):
 
 
 class Order(models.Model):
+    id = models.AutoField(primary_key=True)
     email = models.CharField(max_length=45)
     visitor_name = models.CharField(max_length=255)
     status = models.CharField(max_length=45)
@@ -78,6 +84,7 @@ class Order(models.Model):
 
 
 class Seat(models.Model):
+    id = models.AutoField(primary_key=True)
     row = models.CharField(max_length=45)
     number = models.CharField(max_length=45)
     hall = models.ForeignKey(Hall, models.DO_NOTHING)
@@ -89,6 +96,7 @@ class Seat(models.Model):
 
 
 class SeatCategory(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=45)
 
     class Meta:
