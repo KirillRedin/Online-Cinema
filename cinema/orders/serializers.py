@@ -25,6 +25,7 @@ class CategoryPriceSerializer(serializers.ModelSerializer):
     class Meta:
         model = CategoryPrice
         fields = (
+            'id',
             'seat_category_id',
             'session_id',
             'price'
@@ -38,14 +39,14 @@ class FilmSerializer(serializers.ModelSerializer):
             'id',
             'name',
             'description',
-            'language_id',
-            'subtitle_id',
+            'language',
+            'subtitle',
             'release_date',
             'duration',
             'trailer',
             'actors',
             'poster',
-            'genre_id'
+            'genre'
         )
 
 
@@ -85,8 +86,8 @@ class OrderSerializer(serializers.ModelSerializer):
             'email',
             'visitor_name',
             'status',
-            'session_id',
-            'seat_id',
+            'session',
+            'seat',
             'locking_date'
         )
 
@@ -105,7 +106,7 @@ class SeatSerializer(serializers.ModelSerializer):
 
 class SeatCategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Seat
+        model = SeatCategory
         fields = (
             'id',
             'name'

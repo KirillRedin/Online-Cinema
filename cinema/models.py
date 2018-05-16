@@ -13,7 +13,6 @@ class Admin(models.Model):
     password = models.CharField(max_length=45, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'admin'
 
 
@@ -21,7 +20,6 @@ class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)
 
     class Meta:
-        managed = False
         db_table = 'auth_group'
 
 
@@ -30,7 +28,6 @@ class AuthGroupPermissions(models.Model):
     permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'auth_group_permissions'
         unique_together = (('group', 'permission'),)
 
@@ -41,7 +38,6 @@ class AuthPermission(models.Model):
     codename = models.CharField(max_length=100)
 
     class Meta:
-        managed = False
         db_table = 'auth_permission'
         unique_together = (('content_type', 'codename'),)
 
@@ -59,7 +55,6 @@ class AuthUser(models.Model):
     date_joined = models.DateTimeField()
 
     class Meta:
-        managed = False
         db_table = 'auth_user'
 
 
@@ -68,7 +63,6 @@ class AuthUserGroups(models.Model):
     group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'auth_user_groups'
         unique_together = (('user', 'group'),)
 
@@ -78,7 +72,6 @@ class AuthUserUserPermissions(models.Model):
     permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'auth_user_user_permissions'
         unique_together = (('user', 'permission'),)
 
@@ -89,7 +82,6 @@ class CategoryPrice(models.Model):
     price = models.FloatField()
 
     class Meta:
-        managed = False
         db_table = 'category_price'
         unique_together = (('seat_category', 'session'),)
 
@@ -104,7 +96,6 @@ class DjangoAdminLog(models.Model):
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'django_admin_log'
 
 
@@ -113,7 +104,6 @@ class DjangoContentType(models.Model):
     model = models.CharField(max_length=100)
 
     class Meta:
-        managed = False
         db_table = 'django_content_type'
         unique_together = (('app_label', 'model'),)
 
@@ -124,7 +114,6 @@ class DjangoMigrations(models.Model):
     applied = models.DateTimeField()
 
     class Meta:
-        managed = False
         db_table = 'django_migrations'
 
 
@@ -134,7 +123,6 @@ class DjangoSession(models.Model):
     expire_date = models.DateTimeField()
 
     class Meta:
-        managed = False
         db_table = 'django_session'
 
 
@@ -151,7 +139,6 @@ class Film(models.Model):
     genre = models.ForeignKey('Genre', models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'film'
 
 
@@ -159,7 +146,6 @@ class Genre(models.Model):
     name = models.CharField(max_length=45)
 
     class Meta:
-        managed = False
         db_table = 'genre'
 
 
@@ -168,7 +154,6 @@ class Hall(models.Model):
     seats_map = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'hall'
 
 
@@ -176,7 +161,6 @@ class Language(models.Model):
     name = models.CharField(max_length=45)
 
     class Meta:
-        managed = False
         db_table = 'language'
 
 
@@ -189,7 +173,6 @@ class Order(models.Model):
     locking_date = models.DateTimeField()
 
     class Meta:
-        managed = False
         db_table = 'order'
 
 
@@ -200,7 +183,6 @@ class Seat(models.Model):
     seat_category = models.ForeignKey('SeatCategory', models.DO_NOTHING)
 
     class Meta:
-        managed = False
         db_table = 'seat'
 
 
@@ -208,7 +190,6 @@ class SeatCategory(models.Model):
     name = models.CharField(max_length=45)
 
     class Meta:
-        managed = False
         db_table = 'seat_category'
 
 
@@ -220,5 +201,4 @@ class Session(models.Model):
     format = models.CharField(max_length=45, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'session'
